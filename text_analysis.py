@@ -1,13 +1,11 @@
 import sys, random, re
 
-sentence = "one fish two fish red fish blue fish"
+def histogram(source_location, structure = "lol"):
+    with open(source_location) as lrg_string:
+        words_list = lrg_string.read().split()
+        words_dict = {}
 
-words_list = re.split("[\W]+", sentence)
-
-def histogram(source_text, structure = "lol"):
-    words_dict = {}
-
-    for word in source_text:
+    for word in words_list:
         if word in words_dict:
             words_dict[word] += 1
         else:
@@ -17,10 +15,9 @@ def histogram(source_text, structure = "lol"):
         print(f"list of lists: {list(map(list, words_dict.items()))}")
     elif structure == "lot" :
         print(f"list of tuples: {list(map(tuple, words_dict.items()))}")
-        pass
     return words_dict
 
 
 if __name__ == '__main__':
-    histogram(words_list, "lol")
-    histogram(words_list, "lot")
+    histogram("feels_good_inc.txt", "lol") # list of lists
+    histogram("feels_good_inc.txt", "lot") # list of tuples
