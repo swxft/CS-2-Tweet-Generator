@@ -1,4 +1,4 @@
-from hashlib import new
+# from hashlib import new
 import sys, random, re
 #  generating sentences from a body of text in a text file. 
 
