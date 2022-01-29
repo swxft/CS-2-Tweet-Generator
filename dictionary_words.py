@@ -6,7 +6,16 @@ def random_python_quote(corpus, words_requested):
         text_body = vocabulary.read().split()
         new_words = (random.choices(text_body, k = int(words_requested)))
         new_sentence = " ".join(new_words)
-        print(f"{new_sentence}.")
+        # print(f"{new_sentence}.")
+    return new_sentence
+
+def histogram_random_word(histogram_tuple_list, words_requested = 1):
+    key_list = []
+    for pair in histogram_tuple_list:
+        key_list.append(pair) # windmill
+    # print(f"key list: {key_list}")
+    new_words = (random.choices(key_list, k = int(words_requested)))
+    new_sentence = " ".join(new_words)
     return new_sentence
 
 if __name__ == '__main__':
