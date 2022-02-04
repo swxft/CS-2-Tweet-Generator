@@ -1,9 +1,10 @@
 import sys, random, dictionary_words, timeit
 # categorize tokens by their types
 def histogram(source_location, structure = "lot"):
+    words_dict = {}
+    
     with open(source_location) as lrg_string:
         words_list = lrg_string.read().split()
-        words_dict = {}
 
     for word in words_list:
         if word in words_dict:
